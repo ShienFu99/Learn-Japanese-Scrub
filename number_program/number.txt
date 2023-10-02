@@ -1,0 +1,119 @@
+#1. Print the kanji for a number -> prompt the user to input the number in arabic numerals (kanji -> 123)
+#> Practice converting kanji to numerals
+
+2. Prompt the user for a number -> Press enter to continue... -> Reveal kanji
+*Expect the user to draw the kanji on paper/computer separately*
+> Practice drawing the kanji for numbers
+
+3. Print the kanji for a number -> prompt the user to input the number in hiragana
+3.5 ^^^ but with katakana
+> Practice converting kanji to hiragana/katakana (more practice), typing in Japanese, and ensuring you understand the phonetics
+> Much more difficult to program
+
+
+
+- Native, Sino-Japanese -> Hiragana, katakana, kanji
+
+Native - end in -tsu:
+Hitotsu, futatsu, mittsu, yottsu, itsutsu, muttsu, nanatsu, yattsu, kokonotsu, tou
+
+Sino-Japanese:
+ichi, ni, san, yon/shi, go, roku, nana/shichi, hachi, kyuu/ku, juu
+
+Ordinal Numbers (ie, 1st, 2nd, 3rd):
+- Always end in banme IF using Sino-Japanese
+> Ichibanme, nibanme, sanbanme, etc
+- Always end in me IF using native-Japanese
+
+
+
+
+1. Convert kanji to arabic numerals
+-> If selected, input n or s for native/Sino-Japanese
+
+> "What level of difficulty would you like to play at?"
+> "Level of difficulty -> Number of digits in number (1 to 5)" -> 0 to 99,999
+> "Level: "
+> *Generate Kanji*
+> "What is the number in arabic numerals? (ie, 3): "
+
+
+> If invalid number, *clear screen*
+
+> *Reshow Kanji*
+> "Invalid input!"
+> "What is the number in arabic numerals? (ie, 3): "
+
+
+> Elif wrong, *clear screen*
+
+> "Incorrect guess!"
+> "Lives remaining: -= 1"
+
+> *Reshow Kanji*
+> "What is the number in arabic numerals? (ie, 3): ""
+
+
+> else "Correct!"
+> "Press enter to continue..."
+> *End program*
+
+
+
+
+
+Notes:
+- Two forms of reading:
+> The Sino-Japanese (on'yomi) readings of the Chinese characters
+> The Japanese yamato kotoba (native words, kun'yomi readings)
+
+
+- Chinese used for cardinal numbers
+- Native Japanese reading (Kun reading) used somewhat less formally for numbers up to 10.
+- 〇 maru -> It may be optionally used when reading individual digits of a number one after another, instead of as a full number -> Only write 零 or 0
+
+- Writing Forms:
+> The Arabic numerals are more often used in horizontal writing, and the Chinese numerals are more common in vertical writing.
+
+- Daiji (大字) -> used in legal and financial documents to prevent unscrupulous individuals from adding a stroke or two, turning a one into a two or a three
+    1 	一 	壱
+    2 	二 	弐
+    3 	三 	参
+    4 	四 	四
+    5 	五 	五
+    6 	六 	六
+    7 	七 	七
+    8 	八 	八
+    9 	九 	九
+    10 	十 	拾
+100 	百 	百
+1000 	千 	千
+10000 	万 	万, 萬
+
+
+
+
+
+
+
+
+
+
+How to actually generate these large numbers:
+- Creating a large list of 99999 numbers is not viable
+> Use grammar rules to create larger numbers
+
+
+if 2 digits:
+    ie, 97
+    -> Get first number and add juu to the end
+        -> kyuu+juu + 2nd number
+
+
+Until you reach the last digit, if below 10000:
+    Take the current digit's value and add the appropriate suffix (sen, hyaku, juu)
+        once at current digit, add digit
+
+1,000,000,000
+10000 -> ichiman
+100,000,000 -> ichioku
