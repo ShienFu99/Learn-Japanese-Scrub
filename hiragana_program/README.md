@@ -21,14 +21,8 @@ This program is run from the command-line and requires Python to run.
 ## Future implementation ideas:
 
 1. Save solution times to a file - compare the current time with the previous fastest
+    -> Improvement: Match time to number of symbols -> Ie, 1.56s for 1 symbol, 90.31 seconds for 46 symbols
 
-Pseudocode logic:
-
-If there is no previously stored time:
-    save the previous time and close the file.
-elif there is a previous stored time:
-    compare the time and see if it's faster than the previous time:
-        if it's faster than the previous time, overwrite it in the file
-            -> It took 15.32 seconds to translate the string. Your fastest translation took 10.32s.
-        else keep the previous time and close the file.
-            -> It took 8.32 seconds to translate the string. New PB!
+Save the times in the form of - difficulty_level:translation_time
+-> Go to the difficulty_level for the given session
+-> Each difficulty_level should be blank at first, then save the first time for reference, and then compare the previous session with the current session for PRs

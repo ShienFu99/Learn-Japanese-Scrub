@@ -137,8 +137,35 @@ def user_translate(user_lives, hiragana_str, hiragana_str_translation):
             #End timer
             end = time()
 
-            #Prints the amount of time it took the user to translate the string
-            print(f"It took {end - start:.2f}s to translate the string.\n")
+            new_time = f"{end - start:.2f}"
+
+            #Opens file in "a+" so its contents can be checked -> If required, gives the ability to write to the file
+            with open("translation_time.txt", "a+") as file:
+                #Checks if file DNE or file is empty -> If so, save the translation_time for the current session
+                if file_empty(file):
+                    file.write(str(new_time))
+
+                    #Prints the amount of time it took the user to translate the string
+                    print(f"It took {new_time}s to translate the string.\n")
+
+                    proceed("Press Enter to exit the program...")
+                    clear_console()
+                    exit()
+
+            #Open file in read mode -> Save the previous translation_time in a variable
+            with open("translation_time.txt", "r") as file:
+                previous_time = float(file.readlines()[0])
+
+            #Open file in write mode -> Compare translation_time from this session with the previous one
+            with open("translation_time.txt", "w") as file:
+                #If the current translation_time is SLOWER than the previous one -> Overwrite the file with the previous translation_time (no PR)
+                if float(new_time) > previous_time:
+                    print(f"It took {new_time}s to translate the string.\n")
+                    file.write(str(previous_time))
+                #If the current translation_Time is FASTER than the previous one -> Overwrite the file with the new translation_time (new PR)
+                else:
+                    print(f"It took {new_time}s to translate the string. New PR!\n")
+                    file.write(str(new_time))
 
             #Exits while-loop, returning to main()
             break
@@ -174,6 +201,16 @@ def proceed(prompt):
 def clear_console():
     #Clears the terminal when run
     system("clear")
+
+
+#Checks if file is empty
+def file_empty(file):
+    #Move file pointer to start of file
+    file.seek(0)
+    #If the first character of the file cannot be read, return True (file is empty), else False
+    if not file.read(1):
+        return True
+    return False
 
 
 if __name__ == "__main__":
