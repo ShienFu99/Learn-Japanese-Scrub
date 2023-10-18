@@ -77,7 +77,7 @@ def main():
     print(hiragana_str)
 
     #Gets the user's translation and evaluates it -> If the user runs out of lives, returns to main
-    user_translate(user_lives, hiragana_str, hiragana_str_translation)
+    user_translate(user_lives, hiragana_str, hiragana_str_translation, difficulty_level)
 
     proceed("Press Enter to exit the program...")
     clear_console()
@@ -115,7 +115,7 @@ def generate_hiragana_str(hiragana, difficulty_level):
     return (hiragana_str, hiragana_str_translation)
 
 
-def user_translate(user_lives, hiragana_str, hiragana_str_translation):
+def user_translate(user_lives, hiragana_str, hiragana_str_translation, difficulty_level):
     user_guesses = []
     guess_count = 0
 
@@ -137,35 +137,8 @@ def user_translate(user_lives, hiragana_str, hiragana_str_translation):
             #End timer
             end = time()
 
-            new_time = f"{end - start:.2f}"
-
-            #Opens file in "a+" so its contents can be checked -> If required, gives the ability to write to the file
-            with open("translation_time.txt", "a+") as file:
-                #Checks if file DNE or file is empty -> If so, save the translation_time for the current session
-                if file_empty(file):
-                    file.write(str(new_time))
-
-                    #Prints the amount of time it took the user to translate the string
-                    print(f"It took {new_time}s to translate the string.\n")
-
-                    proceed("Press Enter to exit the program...")
-                    clear_console()
-                    exit()
-
-            #Open file in read mode -> Save the previous translation_time in a variable
-            with open("translation_time.txt", "r") as file:
-                previous_time = float(file.readlines()[0])
-
-            #Open file in write mode -> Compare translation_time from this session with the previous one
-            with open("translation_time.txt", "w") as file:
-                #If the current translation_time is SLOWER than the previous one -> Overwrite the file with the previous translation_time (no PR)
-                if float(new_time) > previous_time:
-                    print(f"It took {new_time}s to translate the string.\n")
-                    file.write(str(previous_time))
-                #If the current translation_Time is FASTER than the previous one -> Overwrite the file with the new translation_time (new PR)
-                else:
-                    print(f"It took {new_time}s to translate the string. New PR!\n")
-                    file.write(str(new_time))
+            #Calculates and pass the new_translation_time to the function for validation
+            print(validate_translation_time(f"{end - start:.2f}", difficulty_level))
 
             #Exits while-loop, returning to main()
             break
@@ -193,17 +166,19 @@ def user_translate(user_lives, hiragana_str, hiragana_str_translation):
                 print("\nWhat is the translation in roumaji?\n")
 
 
+#Prompts the user before proceeding with the program
 def proceed(prompt):
     #Hides user input + doesn't store it -> Program pauses until the user presses Enter
     getpass(prompt)
 
 
+#Clears the console
 def clear_console():
     #Clears the terminal when run
     system("clear")
 
 
-#Checks if file is empty
+#Checks if a file is empty
 def file_empty(file):
     #Move file pointer to start of file
     file.seek(0)
@@ -211,6 +186,67 @@ def file_empty(file):
     if not file.read(1):
         return True
     return False
+
+
+#Given a file pointer, this function generates its default values
+def generate_default_file(file):
+    for _ in range(46):
+        file.write(f"{_+1}:\"\"\n")
+
+
+#Compares previous translation_times with the current session's translation_time -> If the user translates N symbols faster than before, records it in a file
+#Generates a file if it DNE or its contents are empty
+def validate_translation_time(current_translation_time, user_difficulty_level):
+
+    #Creates a list of the previous translation_times stored in the file
+    user_translation_times = []
+
+    #If the file is empty or DNE, create the file -> Generate the default values (translation_times = "" means no time has been saved yet)
+    with open("translation_times.txt", "a+") as file:
+        if file_empty(file):
+            generate_default_file(file)
+
+        #Move file pointer to start of the file
+        file.seek(0)
+
+        #Read the lines from the file
+        lines = file.readlines()
+
+        #Store each line from the file into the list
+        for line in lines:
+            user_translation_times.append(line.strip())
+
+    #Reopen file in write mode so the previous contents can be overwritten instead of being appended to
+    with open("translation_times.txt", "w") as file:
+        #The lines in the file span from 1-46 (number of symbols the user chooses to translate) -> Indexing into the list at [user_difficulty-1] returns the line for chosen difficulty_level
+        #Split the line to access the previous translation_time for the selected difficulty_level
+        file_diff_level, previous_translation_time = user_translation_times[user_difficulty_level-1].split(":", 1)
+
+        #Run this block if the selected difficulty_level has no previously saved translation_time
+        #Write the translation_time of the current session into the file for the given difficulty level
+        if previous_translation_time == "\"\"":
+
+            user_translation_times[user_difficulty_level-1] = f"{user_difficulty_level}:{current_translation_time}"
+
+            for line in user_translation_times:
+                lines = file.write(f"{line}\n")
+            return f"Symbols translated in {current_translation_time}s. New PR for {user_difficulty_level}-symbol string!"
+        #If a previous translation_time has been saved for the given difficulty level...
+        else:
+            #Compare the current_translation_time with the previous one to see if the user was faster -> If not, retain the previous file entry
+            if current_translation_time > previous_translation_time:
+                #The entries in the file span from 1-46, so indexing into the list at the user_diff_level-1 returns the correct entry
+                user_translation_times[user_difficulty_level-1] = f"{user_difficulty_level}:{previous_translation_time}"
+                for line in user_translation_times:
+                    lines = file.write(f"{line}\n")
+                return f"Symbols translated in {current_translation_time}s. Previous PR was {previous_translation_time}s."
+            #If the user's translation_time is quicker in this session, overwrite the previous translation_time in the file to reflect a new PR
+            else:
+                #The entries in the file span from 1-46, so indexing into the list at the user_diff_level-1 returns the correct entry
+                user_translation_times[user_difficulty_level-1] = f"{user_difficulty_level}:{current_translation_time}"
+                for line in user_translation_times:
+                    lines = file.write(f"{line}\n")
+                return f"Symbols translated in {current_translation_time}s. New PR for {user_difficulty_level}-symbol string!"
 
 
 if __name__ == "__main__":
