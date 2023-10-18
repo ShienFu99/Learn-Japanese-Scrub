@@ -13,61 +13,61 @@ def main():
     #User starts with 3 lives
     user_lives = 3
 
-    #Maps each hiragana to its roumaji equivalent
+    #Maps each hiragana to its rōmaji equivalent
     hiragana = [
-        {"hiragana": "あ", "roumaji": "a"},
-        {"hiragana": "い", "roumaji": "i"},
-        {"hiragana": "う", "roumaji": "u"},
-        {"hiragana": "え", "roumaji": "e"},
-        {"hiragana": "お", "roumaji": "o"},
-        {"hiragana": "か", "roumaji": "ka"},
-        {"hiragana": "き", "roumaji": "ki"},
-        {"hiragana": "く", "roumaji": "ku"},
-        {"hiragana": "け", "roumaji": "ke"},
-        {"hiragana": "こ", "roumaji": "ko"},
-        {"hiragana": "さ", "roumaji": "sa"},
-        {"hiragana": "し", "roumaji": "shi"},
-        {"hiragana": "す", "roumaji": "su"},
-        {"hiragana": "せ", "roumaji": "se"},
-        {"hiragana": "そ", "roumaji": "so"},
-        {"hiragana": "た", "roumaji": "ta"},
-        {"hiragana": "ち", "roumaji": "chi"},
-        {"hiragana": "つ", "roumaji": "tsu"},
-        {"hiragana": "て", "roumaji": "te"},
-        {"hiragana": "と", "roumaji": "to"},
-        {"hiragana": "な", "roumaji": "na"},
-        {"hiragana": "に", "roumaji": "ni"},
-        {"hiragana": "ぬ", "roumaji": "nu"},
-        {"hiragana": "ね", "roumaji": "ne"},
-        {"hiragana": "の", "roumaji": "no"},
-        {"hiragana": "は", "roumaji": "ha"},
-        {"hiragana": "ひ", "roumaji": "hi"},
-        {"hiragana": "ふ", "roumaji": "fu"},
-        {"hiragana": "へ", "roumaji": "he"},
-        {"hiragana": "ほ", "roumaji": "ho"},
-        {"hiragana": "ま", "roumaji": "ma"},
-        {"hiragana": "み", "roumaji": "mi"},
-        {"hiragana": "む", "roumaji": "mu"},
-        {"hiragana": "め", "roumaji": "me"},
-        {"hiragana": "も", "roumaji": "mo"},
-        {"hiragana": "や", "roumaji": "ya"},
-        {"hiragana": "ゆ", "roumaji": "yu"},
-        {"hiragana": "よ", "roumaji": "yo"},
-        {"hiragana": "ら", "roumaji": "ra"},
-        {"hiragana": "り", "roumaji": "ri"},
-        {"hiragana": "る", "roumaji": "ru"},
-        {"hiragana": "れ", "roumaji": "re"},
-        {"hiragana": "ろ", "roumaji": "ro"},
-        {"hiragana": "わ", "roumaji": "wa"},
-        {"hiragana": "を", "roumaji": "wo"},
-        {"hiragana": "ん", "roumaji": "n"}
+        {"hiragana": "あ", "rōmaji": "a"},
+        {"hiragana": "い", "rōmaji": "i"},
+        {"hiragana": "う", "rōmaji": "u"},
+        {"hiragana": "え", "rōmaji": "e"},
+        {"hiragana": "お", "rōmaji": "o"},
+        {"hiragana": "か", "rōmaji": "ka"},
+        {"hiragana": "き", "rōmaji": "ki"},
+        {"hiragana": "く", "rōmaji": "ku"},
+        {"hiragana": "け", "rōmaji": "ke"},
+        {"hiragana": "こ", "rōmaji": "ko"},
+        {"hiragana": "さ", "rōmaji": "sa"},
+        {"hiragana": "し", "rōmaji": "shi"},
+        {"hiragana": "す", "rōmaji": "su"},
+        {"hiragana": "せ", "rōmaji": "se"},
+        {"hiragana": "そ", "rōmaji": "so"},
+        {"hiragana": "た", "rōmaji": "ta"},
+        {"hiragana": "ち", "rōmaji": "chi"},
+        {"hiragana": "つ", "rōmaji": "tsu"},
+        {"hiragana": "て", "rōmaji": "te"},
+        {"hiragana": "と", "rōmaji": "to"},
+        {"hiragana": "な", "rōmaji": "na"},
+        {"hiragana": "に", "rōmaji": "ni"},
+        {"hiragana": "ぬ", "rōmaji": "nu"},
+        {"hiragana": "ね", "rōmaji": "ne"},
+        {"hiragana": "の", "rōmaji": "no"},
+        {"hiragana": "は", "rōmaji": "ha"},
+        {"hiragana": "ひ", "rōmaji": "hi"},
+        {"hiragana": "ふ", "rōmaji": "fu"},
+        {"hiragana": "へ", "rōmaji": "he"},
+        {"hiragana": "ほ", "rōmaji": "ho"},
+        {"hiragana": "ま", "rōmaji": "ma"},
+        {"hiragana": "み", "rōmaji": "mi"},
+        {"hiragana": "む", "rōmaji": "mu"},
+        {"hiragana": "め", "rōmaji": "me"},
+        {"hiragana": "も", "rōmaji": "mo"},
+        {"hiragana": "や", "rōmaji": "ya"},
+        {"hiragana": "ゆ", "rōmaji": "yu"},
+        {"hiragana": "よ", "rōmaji": "yo"},
+        {"hiragana": "ら", "rōmaji": "ra"},
+        {"hiragana": "り", "rōmaji": "ri"},
+        {"hiragana": "る", "rōmaji": "ru"},
+        {"hiragana": "れ", "rōmaji": "re"},
+        {"hiragana": "ろ", "rōmaji": "ro"},
+        {"hiragana": "わ", "rōmaji": "wa"},
+        {"hiragana": "を", "rōmaji": "wo"},
+        {"hiragana": "ん", "rōmaji": "n"}
     ]
 
     #Gets the difficulty level from the user
     difficulty_level = get_difficulty_level()
 
     #Generates a random string of N (unique) hiragana characters -> N is the difficulty_level
-    #Also generates the roumaji equivalent
+    #Also generates the rōmaji equivalent
     hiragana_str, hiragana_str_translation = generate_hiragana_str(hiragana, difficulty_level)
 
     #Displays remaining lives
@@ -105,9 +105,9 @@ def generate_hiragana_str(hiragana, difficulty_level):
         difficulty_level -= 1
         #Selects a random hiragana character
         hiragana_char = choice(hiragana)
-        #Adds the randomly selected hiragana character to the hiragana_str + its roumaji equivalent to the translated string
+        #Adds the randomly selected hiragana character to the hiragana_str + its rōmaji equivalent to the translated string
         hiragana_str += hiragana_char["hiragana"]
-        hiragana_str_translation += hiragana_char["roumaji"]
+        hiragana_str_translation += hiragana_char["rōmaji"]
         #Removes the selected hiragana character from the list to prevent repeats
         hiragana.remove(hiragana_char)
 
@@ -119,7 +119,7 @@ def user_translate(user_lives, hiragana_str, hiragana_str_translation, difficult
     user_guesses = []
     guess_count = 0
 
-    print("What is the translation in roumaji?\n")
+    print("What is the translation in rōmaji?\n")
 
     #Start timer
     start = time()
@@ -163,7 +163,7 @@ def user_translate(user_lives, hiragana_str, hiragana_str_translation, difficult
                 print("Incorrect! Try again.")
                 print(f"Lives remaining: {user_lives}\n")
                 print(hiragana_str)
-                print("\nWhat is the translation in roumaji?\n")
+                print("\nWhat is the translation in rōmaji?\n")
 
 
 #Prompts the user before proceeding with the program

@@ -1,10 +1,10 @@
 # Program meant to help practice reading / translating hiragana
 
-## Generates N unique hiragana characters for the user to translate into roumaji
+## Generates N unique hiragana characters for the user to translate into rōmaji
 
 * The user must input a difficulty level between 1 and 46 (number of hiragana characters to translate)
 * Generates a random string of hiragana (without repeating characters)
-* Expects the user to input the translation in roumaji
+* Expects the user to input the translation in rōmaji
 * The user gets 3 lives before the program shows the correct translation and exits
     -> Displays previous incorrect guesses for review
 
