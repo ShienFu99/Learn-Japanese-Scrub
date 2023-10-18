@@ -17,3 +17,18 @@ This program is run from the command-line and requires Python to run.
     -> git clone (paste html link here) .
 3. Once your in the folder with the .py file, run this command:
     -> python hiragana_generator.py
+
+## Future implementation ideas:
+
+1. Save solution times to a file - compare the current time with the previous fastest
+
+Pseudocode logic:
+
+If there is no previously stored time:
+    save the previous time and close the file.
+elif there is a previous stored time:
+    compare the time and see if it's faster than the previous time:
+        if it's faster than the previous time, overwrite it in the file
+            -> It took 15.32 seconds to translate the string. Your fastest translation took 10.32s.
+        else keep the previous time and close the file.
+            -> It took 8.32 seconds to translate the string. New PB!
