@@ -3,6 +3,7 @@ from getpass import getpass
 from os import system
 from random import choice
 from sys import exit
+from time import time
 
 
 def main():
@@ -120,6 +121,9 @@ def user_translate(user_lives, katakana_str, katakana_str_translation):
 
     print("What is the translation in roumaji?\n")
 
+    #Start timer
+    start = time()
+
     #Evalutates user's translation and responds appropriately
     while True:
         #Each guess is saved in a list
@@ -129,6 +133,13 @@ def user_translate(user_lives, katakana_str, katakana_str_translation):
         #If the user's translation is correct, let them know and exit the loop -> ends the program
         if user_guesses[guess_count] == katakana_str_translation:
             print("Correct!\n")
+
+            #End timer
+            end = time()
+
+            #Prints the amount of time it took the user to translate the string
+            print(f"It took {end - start:.2f}s to translate the string.\n")
+
             #Exits while-loop, returning to main()
             break
 
@@ -141,10 +152,9 @@ def user_translate(user_lives, katakana_str, katakana_str_translation):
             #If the user guesses wrong 3 times in a row, show the proper translation and display their previous guesses -> break out of the loop and end the progam
             if user_lives == 0:
                 print(f"{katakana_str}\n")
-                print(f"Incorrect! The translation is \"{katakana_str_translation}\".")
-                print("\nYour previous guesses:")
+                print(f"Incorrect! The correct translation is:\n\"{katakana_str_translation}\"\n")
                 for num, guess in enumerate(user_guesses):
-                    print(f"Guess {num+1}: {guess}")
+                    print(f"Guess {num+1}: \n\"{guess}\"")
                 print()
                 break
 
