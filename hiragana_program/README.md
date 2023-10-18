@@ -17,12 +17,3 @@ This program is run from the command-line and requires Python to run.
     -> git clone (paste html link here) .
 3. Once your in the folder with the .py file, run this command:
     -> python hiragana_generator.py
-
-## Future implementation ideas:
-
-1. Save solution times to a file - compare the current time with the previous fastest
-    -> Improvement: Match time to number of symbols -> Ie, 1.56s for 1 symbol, 90.31 seconds for 46 symbols
-
-Save the times in the form of - difficulty_level:translation_time
--> Go to the difficulty_level for the given session
--> Each difficulty_level should be blank at first, then save the first time for reference, and then compare the previous session with the current session for PRs
