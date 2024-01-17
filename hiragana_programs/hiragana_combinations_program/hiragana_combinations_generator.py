@@ -43,7 +43,7 @@ def main():
         {"hiragana": "じゅ", "rōmaji": "ju"},
         {"hiragana": "じょ", "rōmaji": "jo"},
         {"hiragana": "ぢゃ", "rōmaji": "ja"},
-        {"hiragana": "ぢゆ", "rōmaji": "ju"},
+        {"hiragana": "ぢゅ", "rōmaji": "ju"},
         {"hiragana": "ぢょ", "rōmaji": "jo"},
         {"hiragana": "びゃ", "rōmaji": "bya"},
         {"hiragana": "びゅ", "rōmaji": "byu"},
