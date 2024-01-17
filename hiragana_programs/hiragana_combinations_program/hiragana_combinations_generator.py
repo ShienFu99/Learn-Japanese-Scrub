@@ -49,8 +49,8 @@ def main():
         {"hiragana": "びゅ", "rōmaji": "byu"},
         {"hiragana": "びょ", "rōmaji": "byo"},
         {"hiragana": "ぴゃ", "rōmaji": "pya"},
-        {"hiragana": "びゅ", "rōmaji": "pyu"},
-        {"hiragana": "びょ", "rōmaji": "pyo"}
+        {"hiragana": "ぴゅ", "rōmaji": "pyu"},
+        {"hiragana": "ぴょ", "rōmaji": "pyo"}
     ]
 
     #Gets the difficulty level from the user
