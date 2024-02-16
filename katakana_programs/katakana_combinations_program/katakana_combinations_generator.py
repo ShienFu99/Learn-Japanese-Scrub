@@ -199,7 +199,7 @@ def file_empty(file):
 
 #Given a file pointer, this function generates its default values
 def generate_default_file(file):
-    for _ in range(46):
+    for _ in range(55):
         file.write(f"{_+1}:\"\"\n")
 
 
