@@ -1,0 +1,101 @@
+NUMBERS:
+零 - 0, れい / ぜろ / まる
+    -> れい is the standard pronunciation for counting, stating there is zero of something, etc
+    -> ぜろ is an alternative pronunciation that is more beginner friendly and becoming increasingly popular
+    -> まる is used to spell out a list of digits, such as a phone number, address, etc
+一 - 1, いち
+二 - 2, に
+三 - 3, さん
+四 - 4, し / よん
+五 - 5, ご
+六 - 6, ろく
+七 - 7, しち / なな
+八 - 8, はち
+九 - 9, く / きゅう
+十 - 10, じゅう
+百 - 100, ひゃく
+千 - 1000, せん
+万 - 10000, まん
+
+DAYS OF THE WEEK
+月曜日 - Monday, げつようび
+火曜日 - Tuesday, かようび
+水曜日 - Wednesday, すいようび
+木曜日 - Thursday, もくようび
+金曜日 - Friday, きにょうび
+土曜日 - Saturday, どようび
+日曜日 - Sunday, にちようび
+
+SEASONS:
+冬 - Winter, ふゆ
+春 - Spring, はる
+夏 - Summer = , なつ
+秋 - Fall / Autumn, あき
+
+CARDINAL DIRECTIONS:
+北 - North, きた
+東 - East, ひがし
+南 - South, みなみ
+西 - West, にし
+
+COLOURS:
+黄色 - Yellow, きいろ
+赤 - Red, あか
+青 - Blue, あお
+緑 - Green, みどり
+紫 - Purple, むらさき
+オレンジ - Orange
+ピンク - Pink
+グレー - Grey
+茶色 - Brown, ちゃいろ
+黒 - Black, くろ
+白 - White, しろ
+
+AGE:
+歳/才 - counter for "___ years old", さい
+    -> 歳 is the proper kanji for age, used in legal documents
+    -> 才 is used for visual recognition, although its actual meaning is something completely different
+- Notable exceptions:
+- 一歳 - 1 year old, いっさい
+- 八歳 - 8 years old, はっさい
+- 十歳 - 10 years old, じゅうさい
+- *二十歳 - 20 years old, はたち
+    -> In Japan, become 20 years old has extra significance - 21-29 is not read as はたち__さい , but にじゅう__さい
+
+TIME:
+秒 - second, びょう
+分 - minute, ぷん/ふん
+    -> Pronunciation varies depending on the number that comes before
+時間 - hour, じかん
+    -> The pronunciation of the number that precedes varies based on time rules - Use the uncommon pronunciation, for 4, say よ~ instead of よん~
+
+
+days, weeks, years, decade, century, millenium
+gozen, gogo, ~fun/pun, ~ji
+
+
+月 - month, がつ
+    -> Append ~月 to the end of a number to get the corresponding month
+- Ie: 四月 - April, しがつ
+- Ie: 六月 - June, ろくがつ
+- *Note: The old readings for numbers are used for months
+
+DIRECTIONAL WORDS:
+up/above/on = 上 - うえ
+down/under/below = 下 - した
+between =
+next to = tonari
+    - Used to refer to the nearest object of the same type, regardless of actual distance
+    - *otonari-san means neighbour/next-door neighbour
+in front =
+behind =
+beside (around/close by) = soba
+    - A. is nearby B. -> omni-directional
+beside = yoko
+    - Beside in a horizontal sense
+near =
+far =
+inside =
+outside =
+left = 左 - ひだり
+right = 右 - みぎ

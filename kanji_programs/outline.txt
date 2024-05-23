@@ -1,0 +1,19 @@
+Enter a number that corresponds to the method of studying you would like to use:
+1. English to kana
+2. Kanji to English
+3. Kanji to kana (Note: You will type all of your answers in hiragana, but for ordinarily loan words are represented with katakana)
+
+Enter the ___ representation of the following word:
+"Brown"
+
+*Once set is completed, record time it took and save time in file*
+*Do you wish to continue? Restart program, else end program*
+
+Study methods:
+1. English to kana
+2. Kanji to English
+3. Kanji to kana
+
+
+Start mode: "English" or "Kanji"
+End mode: "English" or "Kana"
