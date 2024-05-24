@@ -4,9 +4,9 @@
     {"kanji": "青", "english": "blue", "kana": "あお"},
     {"kanji": "緑", "english": "green", "kana": "みどり"},
     {"kanji": "紫", "english": "purple", "kana": "むらさき"},
-    {"kanji": "オレンジ", "english": "orange", "kana": "オレンジ"},
-    {"kanji": "ピンク", "english": "pink", "kana": "ピンク"},
-    {"kanji": "グレー", "english": "grey", "kana": "グレー"},
+    {"kanji": "オレンジ", "english": "orange", "kana": "おれんじ"},
+    {"kanji": "ピンク", "english": "pink", "kana": "ぴんく"},
+    {"kanji": "グレー", "english": "grey", "kana": "ぐれー"},
     {"kanji": "茶色", "english": "brown", "kana": "ちゃいろ"},
     {"kanji": "黒", "english": "black", "kana": "くろ"},
     {"kanji": "白", "english": "white", "kana": "しろ"}
